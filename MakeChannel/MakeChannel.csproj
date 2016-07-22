@@ -90,5 +90,6 @@
     <BundleResource Include="Resources\ngpacker.py" />
     <BundleResource Include="Resources\apkinfo.py" />
     <BundleResource Include="Resources\channels.txt" />
+    <BundleResource Include="Resources\MakeChannel.icns" />
   </ItemGroup>
 </Project>

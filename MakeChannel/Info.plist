@@ -27,6 +27,8 @@
 	<key>XSAppIconAssets</key>
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1</string>
+	<string>0.2</string>
+	<key>CFBundleIconFile</key>
+	<string>MakeChannel.icns</string>
 </dict>
 </plist>

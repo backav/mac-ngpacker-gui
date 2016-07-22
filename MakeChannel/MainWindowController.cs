@@ -72,8 +72,7 @@ namespace MakeChannel
 			saveAsDefault();
 
 			outputs=new System.Text.StringBuilder();
-			String command = "jarsigner -keystore "+txtKeystore.StringValue +" -storepass "+txtKeyStorePasswd.StringValue+" -keypass "+txtPassword.StringValue+" "+txtApk.StringValue +" " + txtAlias.StringValue;
-
+			String command = "jarsigner -keystore \""+txtKeystore.StringValue +"\" -storepass "+txtKeyStorePasswd.StringValue+" -keypass "+txtPassword.StringValue+" \""+txtApk.StringValue +"\" " + txtAlias.StringValue;
 
 			String channelConfigFilePath=NSBundle.MainBundle.PathForResource("channels","txt");
 
@@ -92,11 +91,11 @@ namespace MakeChannel
 
 				String output=txtApk.StringValue.Replace(".apk","-NoChannel.apk");
 				String zipalign=NSBundle.MainBundle.PathForResource("zipalign",null);
-				command = zipalign +" -f 4  " + txtApk.StringValue +" "+output;
+				command = zipalign +" -f 4  \"" + txtApk.StringValue +"\" \""+output+"\"";
 				if(runCommand(command)){
 
 					String ngparker=NSBundle.MainBundle.PathForResource("ngpacker",".py");
-					command = "/usr/bin/env python "+ngparker +" "+output+" "+channelConfigFilePath + " "+txtSaveLocation.StringValue;
+					command = "/usr/bin/env python \""+ngparker +"\" \""+output+"\" \""+channelConfigFilePath + "\" \""+txtSaveLocation.StringValue+"\"";
 					if(runCommand(command)){
 						alert("打包成功");
 					}else{
