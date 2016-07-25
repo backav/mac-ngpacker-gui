@@ -9,6 +9,10 @@ import struct
 import shutil
 import argparse
 import time
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 from apkinfo import APK
 
 __version__ = '1.0.2.20151204'
@@ -38,7 +42,7 @@ def write_market(path, market, output):
     name,ext = os.path.splitext(os.path.basename(path))
     # name,package,vname,vcode
     app = parse_apk(path)
-    apk_name = '%s-%s-%s-%s%s' % (app['app_package'],
+    apk_name = '%s-%s-%s-%s%s' % (app['app_name'],
         market.decode('utf8'), app['version_name'], app['version_code'], ext)
     # apk_name = name + "-" + market + ext
     apk_file = os.path.join(output,apk_name)
@@ -147,7 +151,7 @@ def process(path, market = MARKET_PATH,output = OUTPUT_PATH):
             # break
         else:
             counter += 1
-            print('processed apk:',counter)
+            print('processed apk:',apk_file)
 
     print('all',counter,'apks saved to',os.path.abspath(output)) 
 

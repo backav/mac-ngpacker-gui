@@ -6,8 +6,6 @@
 	<string>MakeChannel</string>
 	<key>CFBundleIdentifier</key>
 	<string>li.xiangyang.makechannel</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.9</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -27,8 +25,10 @@
 	<key>XSAppIconAssets</key>
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.2</string>
+	<string>0.4</string>
 	<key>CFBundleIconFile</key>
 	<string>MakeChannel.icns</string>
+	<key>CFBundleVersion</key>
+	<string>4</string>
 </dict>
 </plist>

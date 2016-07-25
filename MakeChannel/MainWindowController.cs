@@ -77,14 +77,10 @@ namespace MakeChannel
 			String channelConfigFilePath=NSBundle.MainBundle.PathForResource("channels","txt");
 
 			NSFileHandle fh= NSFileHandle.OpenWrite(channelConfigFilePath);
+			fh.TruncateFileAtOffset(0);
 			fh.WriteData(NSData.FromString(txtChannels.Value));
 			fh.CloseFile();
 
-
-//			NSFileHandle *fh = [NSFileHandle fileHandleForWritingAtPath:pathToFile];
-//			[fh seekToEndOfFile];
-//			[fh writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
-//			[fh closeFile];
 
 			// sign
 			if(runCommand(command)){
@@ -101,9 +97,16 @@ namespace MakeChannel
 					}else{
 						alert("打包失败");
 					}
+
+					NSError error;
+					NSFileManager fm= NSFileManager.DefaultManager;
+					fm.Remove(output,out error);
+				
 				}else{
 					alert("Align fail");
 				}
+
+				;
 			}else{
 				alert("签名失败");
 			}
