@@ -165,14 +165,14 @@ namespace MakeChannel
 		}
 
 		private void alert(String txt){
-			var alert = new NSAlert {
+			var alertBox = new NSAlert {
 				MessageText = txt,
 				AlertStyle = NSAlertStyle.Informational
 			};
 
-			alert.AddButton ("OK");
+			alertBox.AddButton ("OK");
 
-			var returnValue = alert.RunModal();
+			alertBox.RunModal();
 		}
 
 		private String selectFile(){

@@ -162,14 +162,14 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="vof-le-LMp">
-                                    <rect key="frame" x="0.0" y="0.0" width="476" height="133"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="461" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="textColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.39607843139999999" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="476" height="133"/>
+                                    <size key="minSize" width="461" height="133"/>
                                     <size key="maxSize" width="506" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="476" height="133"/>
+                                    <size key="minSize" width="461" height="133"/>
                                     <size key="maxSize" width="506" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -221,13 +221,13 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="tmU-Qv-HFG">
-                                    <rect key="frame" x="0.0" y="0.0" width="476" height="156"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="461" height="156"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="476" height="156"/>
+                                    <size key="minSize" width="461" height="156"/>
                                     <size key="maxSize" width="493" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="476" height="156"/>
+                                    <size key="minSize" width="461" height="156"/>
                                     <size key="maxSize" width="493" height="10000000"/>
                                 </textView>
                             </subviews>

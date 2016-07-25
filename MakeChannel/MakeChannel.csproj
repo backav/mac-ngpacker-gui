@@ -54,13 +54,16 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Group.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Group 2.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Group 2副本.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Group 3.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Group 4.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Group 64.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Group 32.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_512x512%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_512x512.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_256x256%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_256x256.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_128x128%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_128x128.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_32x32%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_32x32.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_16x16%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon_16x16.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -90,6 +93,5 @@
     <BundleResource Include="Resources\ngpacker.py" />
     <BundleResource Include="Resources\apkinfo.py" />
     <BundleResource Include="Resources\channels.txt" />
-    <BundleResource Include="Resources\MakeChannel.icns" />
   </ItemGroup>
 </Project>
