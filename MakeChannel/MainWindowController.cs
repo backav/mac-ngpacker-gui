@@ -72,7 +72,7 @@ namespace MakeChannel
 			saveAsDefault();
 
 			outputs=new System.Text.StringBuilder();
-			String command = "jarsigner -digestalg SHA1 -sigalg MD5withRSA -keystore \""+txtKeystore.StringValue +"\" -storepass "+txtKeyStorePasswd.StringValue+" -keypass "+txtPassword.StringValue+" \""+txtApk.StringValue +"\" " + txtAlias.StringValue;
+			String command = "jarsigner -digestalg SHA1 -sigalg SHA1withRSA -keystore \""+txtKeystore.StringValue +"\" -storepass "+txtKeyStorePasswd.StringValue+" -keypass "+txtPassword.StringValue+" \""+txtApk.StringValue +"\" " + txtAlias.StringValue;
 
 			String channelConfigFilePath=NSBundle.MainBundle.PathForResource("channels","txt");
 
