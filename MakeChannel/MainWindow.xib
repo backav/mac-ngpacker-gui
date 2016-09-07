@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
@@ -25,8 +25,8 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <value key="minSize" type="size" width="606" height="571"/>
             <value key="maxSize" type="size" width="606" height="571"/>
-            <value key="minFullScreenContentSize" type="size" width="606" height="458"/>
-            <value key="maxFullScreenContentSize" type="size" width="606" height="458"/>
+            <value key="minFullScreenContentSize" type="size" width="606" height="571"/>
+            <value key="maxFullScreenContentSize" type="size" width="606" height="571"/>
             <view key="contentView" id="3">
                 <rect key="frame" x="0.0" y="0.0" width="606" height="571"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -143,15 +143,15 @@
                             <action selector="selectKeystore:" target="-2" id="JSp-Ne-Q5m"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="NGD-ea-acc">
-                        <rect key="frame" x="520" y="13" width="66" height="25"/>
+                    <button verticalHuggingPriority="750" id="nlw-6a-MZ4">
+                        <rect key="frame" x="438" y="13" width="74" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="roundTextured" title="生成" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" inset="2" id="5OE-K1-Cvs">
+                        <buttonCell key="cell" type="roundTextured" title="只签名" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" inset="2" id="MFE-d9-8ku">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" size="13" name=".PingFangSC-Regular"/>
                         </buttonCell>
                         <connections>
-                            <action selector="generage:" target="-2" id="DEw-VI-cfC"/>
+                            <action selector="justSign:" target="-2" id="Rt0-yw-IPB"/>
                         </connections>
                     </button>
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="SJd-c6-EEz">
@@ -162,14 +162,14 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="vof-le-LMp">
-                                    <rect key="frame" x="0.0" y="0.0" width="461" height="133"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="446" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="textColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.39607843139999999" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="461" height="133"/>
+                                    <size key="minSize" width="446" height="133"/>
                                     <size key="maxSize" width="506" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="461" height="133"/>
+                                    <size key="minSize" width="446" height="133"/>
                                     <size key="maxSize" width="506" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -221,13 +221,13 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="tmU-Qv-HFG">
-                                    <rect key="frame" x="0.0" y="0.0" width="461" height="156"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="446" height="156"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="461" height="156"/>
+                                    <size key="minSize" width="446" height="156"/>
                                     <size key="maxSize" width="493" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="461" height="156"/>
+                                    <size key="minSize" width="446" height="156"/>
                                     <size key="maxSize" width="493" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -260,6 +260,17 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" id="NGD-ea-acc">
+                        <rect key="frame" x="520" y="13" width="66" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundTextured" title="生成渠道包" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" inset="2" id="5OE-K1-Cvs">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="generage:" target="-2" id="DEw-VI-cfC"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <point key="canvasLocation" x="590" y="367.5"/>

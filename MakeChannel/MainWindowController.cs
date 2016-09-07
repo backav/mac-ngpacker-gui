@@ -64,6 +64,26 @@ namespace MakeChannel
 			}
 		}
 
+		partial void justSign(NSObject sender)
+		{
+			saveAsDefault();
+
+			outputs = new System.Text.StringBuilder();
+
+			String output = txtApk.StringValue.Replace(".apk", "-signed.apk");
+			output=txtSaveLocation.StringValue+output.Substring(output.LastIndexOf("/") + 1);
+			// sign
+			if (sign(txtApk.StringValue
+					, txtKeystore.StringValue, txtKeyStorePasswd.StringValue
+					, txtAlias.StringValue, txtPassword.StringValue, output))
+			{
+				alert("签名成功");
+			}
+			else {
+				alert("签名失败");
+			}
+		}
+
 
 
 		System.Text.StringBuilder outputs;
@@ -72,7 +92,6 @@ namespace MakeChannel
 			saveAsDefault();
 
 			outputs=new System.Text.StringBuilder();
-			String command = "jarsigner -digestalg SHA1 -sigalg SHA1withRSA -keystore \""+txtKeystore.StringValue +"\" -storepass "+txtKeyStorePasswd.StringValue+" -keypass "+txtPassword.StringValue+" \""+txtApk.StringValue +"\" " + txtAlias.StringValue;
 
 			String channelConfigFilePath=NSBundle.MainBundle.PathForResource("channels","txt");
 
@@ -81,17 +100,14 @@ namespace MakeChannel
 			fh.WriteData(NSData.FromString(txtChannels.Value));
 			fh.CloseFile();
 
-
+			String output =txtApk.StringValue.Replace(".apk", "-NoChannel.apk");
 			// sign
-			if(runCommand(command)){
-
-				String output=txtApk.StringValue.Replace(".apk","-NoChannel.apk");
-				String zipalign=NSBundle.MainBundle.PathForResource("zipalign",null);
-				command = zipalign +" -f 4  \"" + txtApk.StringValue +"\" \""+output+"\"";
-				if(runCommand(command)){
+			if(sign(txtApk.StringValue
+			        ,txtKeystore.StringValue,txtKeyStorePasswd.StringValue
+			        ,txtAlias.StringValue,txtPassword.StringValue,output)){
 
 					String ngparker=NSBundle.MainBundle.PathForResource("ngpacker",".py");
-					command = "/usr/bin/env python \""+ngparker +"\" \""+output+"\" \""+channelConfigFilePath + "\" \""+txtSaveLocation.StringValue+"\"";
+					String command = "/usr/bin/env python \""+ngparker +"\" \""+output+"\" \""+channelConfigFilePath + "\" \""+txtSaveLocation.StringValue+"\"";
 					if(runCommand(command)){
 						alert("打包成功");
 					}else{
@@ -101,15 +117,35 @@ namespace MakeChannel
 					NSError error;
 					NSFileManager fm= NSFileManager.DefaultManager;
 					fm.Remove(output,out error);
-				
-				}else{
-					alert("Align fail");
-				}
 
-				;
 			}else{
 				alert("签名失败");
 			}
+		}
+
+
+		private bool sign(string apk,string keyStore,string keyStorePass,string keyAlias,string keyPass,string outputLocation)
+		{
+			
+			String command = "jarsigner -digestalg SHA1 -sigalg SHA1withRSA -keystore \"" +
+				keyStore + "\" -storepass " + keyStorePass 
+				+ " -keypass " + keyPass + " \"" + apk + "\" " + keyAlias;
+			
+			// sign
+			if (runCommand(command))
+			{
+
+				String output = outputLocation;
+				String zipalign = NSBundle.MainBundle.PathForResource("zipalign", null);
+				command = zipalign + " -f 4  \"" + txtApk.StringValue + "\" \"" + output + "\"";
+
+				// zipalign
+				if (runCommand(command))
+				{
+					return true;
+				}
+			}
+			return false;
 		}
 
 		private bool runCommand(String command){

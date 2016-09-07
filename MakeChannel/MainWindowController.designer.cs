@@ -39,6 +39,9 @@ namespace MakeChannel
 		[Action ("generage:")]
 		partial void generage (Foundation.NSObject sender);
 
+		[Action ("justSign:")]
+		partial void justSign (Foundation.NSObject sender);
+
 		[Action ("selectApk:")]
 		partial void selectApk (Foundation.NSObject sender);
 
